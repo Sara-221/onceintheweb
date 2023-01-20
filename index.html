@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <!-- Meta data para SEO -->
+    <title>Once In The Web: Digital Agency in Brussels</title>
+    <meta name="keywords" content="Sustainable Website"> 
+    <meta name="description" content="We are a digital agency specialized in web development and focused on sustainable design solutions for your website.">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <!-- CSS Propio -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <!-- Marco -->
+    <div class="marco">
+
+        <!-- Header -->
+        <header id="headerHome">
+            <a href="index.html" class="logo">
+                <img src="img/logo.png" alt="logo-Once_in_the_web">
+            </a>
+            <!-- El siguiente titulo (con clase h1Desktop, que corresponde al slogan) sólo se muestra dentro del header en la versión Desktop -->
+            <h1 class="h1Desktop">Sustainable web design for purpose-driven people.</h1>
+            <!-- Menu Mobile -->
+            <button class="btnMob" id="btnMob">
+                <i class="fa-solid fa-bars" id="openBtn"></i>
+            </button>
+            <!-- Fin Menu Mobile -->
+        </header>
+        <!-- Fin Header -->
+
+        <!-- Homepage desktop: este bloque animado es la página de inicio en la versión desktop -->
+        <div class="portada" id="portada">
+            <!-- Imagen de fondo con máscara en la posición del ratón -->
+            <img movable class="imagenPortada" src="img/home/code.png">
+            <h1 class="titulo">Sustainable web design <br> for <em>purpose-driven</em> people.</h1>
+            <h2>Code and design in Brussels.</h2>
+            <!-- Línea Decorativa -->
+            <div class="line"></div>
+            <!-- Chevron animado tras 3 segundos para indicar al usuario que debe hacer scroll -->
+            <i class="fa-solid fa-chevron-down" id="down"></i>
+        </div>
+        <!-- Fin Homepage Desktop -->
+
+        <!--  Sección Principal -->
+        <section>
+            <!-- El slogan se muestra de forma separada en tablet y mobile, para mejorar la legibilidad del mismo. -->
+            <h1 class="h1Mobile">Sustainable web design <br> for purpose-driven people.</h1>
+            <!-- La homepage es en realidad un indice (nav) de las secciones principales por las que se llevará al usuario -->
+            <nav class="pagina" id="pagina">  
+                <a href="about.html" class="about"> 
+                    about
+                </a>
+                <a href="how-we-create-ecowebsites.html" class="how">
+                    how
+                </a>
+                <a href="work.html"  class="work">
+                    work
+                </a>
+                <a href="contact.html" class="contact">
+                    contact
+                </a>
+            </nav> 
+        </section>
+        <!-- Fin Seccion Principal -->
+
+        <!-- Footer -->
+        <footer id="footerHome">
+            <span>2022. All rights reserved.</span>
+            <nav class="rrss">
+                <a href="https://www.linkedin.com/" target="_BLANK" rel="nofollow">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="https://twitter.com/" target="_BLANK" rel="nofollow">
+                    <i class="fa-brands fa-twitter"></i>
+                </a>
+                <a href="mailto: hello@onceintheweb.com">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+            </nav>
+        </footer>
+        <!-- Fin Footer -->
+
+    </div>
+    <!-- Fin marco -->
+
+    <!-- Elementos Comunes -->
+
+    <!-- Overlay: se abre al hacer click en el menú principal -->
+    <div class="overlay" id="overlay"></div>
+    <!-- Fin Overlay -->
+    
+    <!-- Menu Principal -->
+    <nav class="menuMob" id="menuMob">
+        <a href="about.html">About</a>
+        <a href="how-we-create-ecowebsites.html">The Process</a>
+        <a href="work.html">Our Work</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    <!-- Fin Menu Principal -->
+    <!-- Fin Elementos Comunes -->
+
+    <!-- JS Font Awesome -->
+    <script src="https://kit.fontawesome.com/c4bccabf39.js" crossorigin="anonymous"></script>
+    <!-- JS Framework -->
+    <!-- JS Propio -->
+    <!-- Funciones -->
+    <script src="js/functions.js"></script>
+    <!-- JS común a todas las páginas -->
+    <script src="js/main.js"></script>
+    <!-- JS específico de esta página -->
+    <script src="js/homepage.js"></script>
+</body>
+</html>

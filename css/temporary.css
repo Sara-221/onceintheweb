@@ -1,0 +1,1081 @@
+/* Parametros */
+    /* font-family: 'Red Hat Display', sans-serif; */
+    @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;500;600;700;900&display=swap');
+
+    /* Declaración de Variables */
+    :root {
+        /* Colores */
+        --color-primario: #F4F5F7; /* color de fondo */
+        --color-secundario: #0C5290; 
+        --color-acento: #DE6B48;
+        --color-hover: #85402B; 
+        --color-texto: #073156;
+        --color-bordes: #B6D5F0;
+        /* Tipografía */
+        --fuente-titulo: 'Red Hat Display', sans-serif;
+        --fuente-parrafo: 'Red Hat Display', sans-serif;
+        --peso-titulo-black: 900;
+        --peso-titulo-bold: 700;
+        --peso-titulo-semibold: 600; 
+        --peso-boton-medium: 500;
+        --peso-parrafo: 400;
+        --peso-caption: 300;
+        --size-h1: 1.5rem;
+        --size-h2: 1.4rem;
+        --size-h3: 1.25rem;
+        --size-h4: 1.12rem;
+        --size-p: 1rem; 
+        --size-caption: 0.9rem;   
+    }
+
+    /* Animaciones */
+    @keyframes rebote {
+		0%, 100% {
+				-webkit-transform: translate(0, 0);
+				transform: translate(0, 0);
+		}
+		50% {
+				-webkit-transform: translate(0, -15px);
+				transform: translate(0, -15px);
+		}
+    }
+
+    
+/* Normalizadores */
+    *{
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+        /* outline: 2px dashed purple; */
+    }
+
+    /* Sistema de Tipografias */
+    h1, h2, h3, h4 {
+        font-family: var(--fuente-titulo);
+        color: var(--color-secundario);
+    }
+
+    h1 {
+        font-weight: var(--peso-titulo-bold);
+    }
+
+    h2 {
+        font-weight: var(--peso-titulo-bold);
+    }
+
+    h3 {
+        font-weight: var(--peso-titulo-semibold);
+    }
+
+    h4 {
+        font-weight: var(--peso-titulo-medium);
+    }
+
+
+    p, span, ul {
+        font-family: var(--fuente-parrafo);
+        font-weight: var(--peso-parrafo);
+        font-size: var(--size-p);
+        text-align: justify;
+    }
+
+    /* Botones y links */
+
+    a {
+        text-decoration: none;
+        font-weight: var(--peso-boton-medium);
+        font-family: var(--fuente-parrafo);
+        /*flex*/
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    button {
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        font-weight: var(--peso-boton-medium);
+        /*flex*/
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Otros */
+
+
+/* Reglas recursivas */
+
+    .btnPrimario, .btnSecundario {
+        text-transform: capitalize;
+        padding: 8px 32px;
+        border-radius: 50px 20px;
+    }
+
+    .btnSecundario {
+        color: var(--color-acento);
+        border: 3px solid var(--color-acento);
+    }
+
+    .btnPrimario {
+        color: var(--color-primario);
+        background-color: var(--color-acento);
+    }
+
+    /* Flechas de navegacion entre pantallas desktop */
+    .navegacion {
+        width: 100%;
+        padding: 2% 8% 1%;
+        background-color: var(--color-primario);
+        display: none !important;
+        /*flex*/
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .navegacion a {
+        font-size: var(--size-h4);
+        font-weight: var(--peso-titulo-bold);
+        color: var(--color-acento);
+    }
+    
+
+    /* Clase para abrir y cerrar el menu principal, así como para ocultar o mostrar elementos dependiendo del viewport */
+    .dBlock {
+        display: block !important;
+    }
+
+    /* Clases para ocultar o mostrar elementos flex en función del viewport */
+    .dFlex {
+        display: flex !important;
+    }
+
+    .dNone {
+        display: none !important;
+    }
+
+    /* Efecto de opacidad para el overlay del menú principal*/
+    .changeOpacity {
+        opacity: 1 !important;
+        position: fixed;
+        top: 70px;
+        left: 0px;
+    }
+
+    /* Esta clase se usa para "convertir" imágenes en texto y texto en imágenes usando las funciones escritas con JS */
+    .navhover {
+        color: var(--color-secundario) !important;
+        background-image: none !important;
+    }
+
+    /* Clase para la animación de la página principal de desktop, que consigue un efecto de traslación de pantalla con el scroll */
+    .transY {
+        opacity: 0;
+        transform: translateY(-150vh);
+    }
+
+    /* Clase utilizada en el acordeón */
+    .respuestaHeight {
+            max-height: 150px !important;
+            padding: 8px !important;
+    }
+
+/* Reglas generales */
+    /* Marco */
+    .marco {
+        width: 100%;
+        max-width: 1920px;
+        margin: auto;
+    }
+
+    /* Header */
+    header {
+        width: 100%;
+        height: 70px;
+        padding: 6% 4%;
+        background-color: var(--color-primario);
+        border-bottom: solid 2px var(--color-bordes); 
+        /*flex*/
+        display: flex;
+        justify-content: space-between;
+        align-items:center;
+    }
+
+    #headerHome {
+        z-index: 11;
+    }
+
+    /* Slogan en header, solo para desktop */
+    .h1Desktop {
+        display: none;
+        font-size: 2rem;
+        color: var(--color-secundario);
+        font-weight: var(--peso-titulo-bold);
+    }
+
+    /* Logo */
+    .logo img {
+        width: 60px;
+        object-fit: cover;
+        object-position: center;
+        z-index: 14;
+    }
+
+    /* Menu Mobile */
+    /* Boton menu */
+    .btnMob {
+        width: 132px;
+        font-size: 2.5rem;
+        padding: 4%;
+        color: var(--color-secundario);
+        border-left: 2px solid var(--color-bordes);
+        z-index: 14;
+    }
+
+    /* Menu Principal */
+    .menuMob {
+        width: 45%;
+        position: fixed;
+        top: 70px;
+        right: 0px;
+        background-color: var(--color-primario);
+        z-index: 21;
+        display: none;
+    }
+
+    /* Opciones del Menu */
+    .menuMob a {
+        font-size: 1.125rem;
+        font-weight: var(--peso-boton-medium);
+        color: var(--color-secundario);
+        padding: 8px 16px;
+        border: 1px solid var(--color-bordes);
+    }
+
+    /* Overlay General */
+    .overlay {
+        width: 100vw;
+        height: calc(100vh - 70px);
+        background-color: rgba(49,49,49,0.8);
+        z-index: 15;
+        opacity:0;
+        display: none;
+        transition: opacity 0.3s ease-in-out;    
+    }
+
+    /* Footer */
+    footer {
+        width: 100%;
+        padding: 4%;
+        font-size: var(--size-h1); 
+        color: #FFF8F6;
+        background-color: #588CBB;
+        /*flex*/
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    footer span{
+        width: 55%;
+        font-size: var(--size-caption);
+        font-weight: var(--peso-caption);
+    }
+
+    .rrss {
+        width: 40%;
+        /*flex*/
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .rrss a {
+        font-size: var(--size-h1); 
+        color: #FFF8F6;
+        padding: 4%;
+    }
+
+
+/* Reglas Especificas */
+    /* Específicas Homepage Desktop */
+    h1.h1Mobile {
+        font-size: var(--size-h1);
+        text-align: center;
+        padding: 8px 4px;
+    }
+    
+    .portada {
+        width: 100%;
+        height: 100vh;
+        background-color: var(--color-primario);
+        position: absolute;
+        display: none;
+        z-index:22;
+        transition: 1s ease-in-out;
+    }
+
+    .titulo {
+        font-size: 5rem;
+        padding: 16px;
+        text-align: center;
+        position: absolute;
+        bottom:0px;
+        top: 35vh;
+        left: 0px;
+        right: 0px;
+        margin: auto;
+        z-index:2;
+    }
+      
+    /* Imagen de fondo (oculta en el inicio) */
+    .element {
+        object-fit: cover;
+        object-position: center;
+        cursor: crosshair;
+        position: absolute;
+        top:0;
+        left:0;
+        z-index: 3;
+        mask-image: url(../img/test/OiW_mask_v8.svg);
+        mask-size: 100px;          
+        mask-repeat: no-repeat;
+        mask-position: calc(var(--mouseX) * 0.9%) calc(var(--mouseY) * 0.9%);
+    }
+
+    .portada h2 {
+        font-size: 2.5rem;
+        padding: 16px;
+        color: var(--color-acento);
+        text-align: center;
+        position: absolute;
+        bottom: 16vh;
+        left: 30%;
+        z-index:2;
+    }
+
+    .line {
+        width: 90%;
+        height: 5px;
+        border-bottom: 3px solid var(--color-bordes);
+        border-radius: 0px 0px 50% 50%;
+        position: absolute;
+        bottom: 15vh;
+        left: 5%;
+        z-index:2;
+    }
+
+    #down {
+        font-size: 3rem;
+        color: var(--color-acento);
+        position: absolute;
+        bottom: 6vh;
+        left: 45%;
+        z-index:2;
+        cursor: pointer;
+		animation: rebote 1.2s infinite ease 3s;
+    }
+
+    /* Homepage (comun mobile y desktop) */
+    .mainPage {
+        width: 100%;
+        height: 80vh;
+    }
+
+    .mainPage > a{
+        width: 100%;
+        height: calc(100% / 4);
+        padding: 24px 20%;
+        z-index: 8;
+        font-size: var(--size-h3);
+        color: var(--color-secundario);
+        border: 2px solid var(--color-bordes);
+        background-repeat: no-repeat;
+    }
+
+    .about, .work {
+        background-position: 80% ;
+        /* Flex */
+        justify-content: flex-start;
+    }
+
+    .how, .contact {
+        background-position: 20% ;
+        /* Flex */
+        justify-content: flex-end;
+    }
+
+    .about {
+        background-color: #CBDFCD;
+        background-image: url(../img/home/trees_v1.png);
+        background-size: 100px;
+    }
+
+    .how {
+        background-color: #FFF8F6;
+        background-image: url(../img/home/hand-on-mouse_v1.png);
+        background-size: 150px;
+    }
+
+    .work {
+        background-color: #D4C4D3;
+        background-image: url(../img/home/sitemap_v1.png);
+        background-size: 90px;
+    }
+
+    .contact {
+        background-color: #E0EDF9;
+        background-image: url(../img/home/contact_v2.png);
+        background-size: 100px;
+    }
+
+    /* Especificas Pagina "about" */
+    .aboutPage, .faq {
+        width: 100%;
+        padding: 2% 4%;
+        background-color: var(--color-primario);
+        color: var(--color-texto);
+    }
+
+    .aboutPage {
+        height: calc(100vh - 80px);
+    }
+    
+    .attachedImage, .mobileImage {
+        background-size: 25vh;
+        background-image: url(../img/about/trees.png);
+        background-repeat: no-repeat;
+    }
+
+    .mobileImage {
+        width: 70%;
+        margin: auto;
+        background-size: contain;
+        background-position: center;
+        display: block;
+    }
+    
+    .attachedImage {
+        width: 45%;
+        background-position: 12% 30%;
+        background-attachment: fixed;
+        display: none;  
+    }
+
+    .articles {
+        height: 100%;
+        /* Ocultar overflow horizontal y permitir scroll vertical */
+        overflow: hidden scroll; 
+    }
+
+    .articles article {
+        margin-bottom: 24px;
+    }
+
+    h1.tituloSeccion, h2.tituloSeccion {
+        font-size: var(--size-h2);
+    }
+    
+    .tituloSeccion::after {
+        content: "";
+        display: block;
+        width: 50%;
+        height: 9px;
+        margin: 3px 0px 16px;
+        background-color: rgba(12, 82, 144, 0.3);
+        border-radius: 20% 5% 45% 15%;
+        box-shadow: inset 0px -1px 0px rgba(12, 82, 144, 0.3);
+    }
+    
+    .btnPrimario, .btnSecundario {
+        margin: 8px 0px 20px;
+    }
+    
+    .offerList li {
+        position: relative;
+        left:  5%;
+        margin-top: 4px;
+    }
+    
+    .faq {
+        display: block;
+    }
+    
+    .faq h3, .faq p {
+        font-size: 0.8rem;
+    }
+    
+    .pregunta{
+        width: 100%;
+        color: var(--color-texto);
+        padding: 4px 8px;
+        background-color: #FFF8F6;
+        border: 1px solid var(--color-acento);
+        border-radius: 50px 20px;
+        margin-bottom: 8px;
+        /*flex*/
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .respuesta {
+        width: 100%;
+        /* height: 0px; */
+        max-height: 0px;
+        text-align: justify;
+        background-color: #FFF8F6;
+        margin-bottom: 8px;
+        border-radius: 15px 15px 0px 0px;
+        transition: max-height 0.6s ease-out;
+        overflow: hidden;
+    }
+    
+    .respuesta a {
+        display: inline-block;
+        color: var(--color-texto);
+    }
+
+    /* How Page */
+    .h1work {
+        font-size: var(--size-h1);  
+        padding: 2% 4%;   
+        text-align: center;
+        background-color: var(--color-primario);
+    }
+
+    .h1work::after {
+        content: "";
+        display: block;
+        width: 30%;
+        height: 8px;
+        margin: auto;
+        background-color: rgba(222, 107, 72, 0.7);
+        border-radius: 85% 15% 15% 15%;
+        box-shadow: inset 0px -1px 0px rgba(222, 107, 72, 0.7);
+    }
+
+    /* Contenido principal */
+    .howPage {
+        width: 100%;
+        height: 620px;
+        background-image: url(../img/how/notebook-bg-desktop.png);
+        background-size: cover;
+        background-position: left;
+        position: relative;
+        top: 0px;
+        left: 0px;
+    }
+
+    /* Menu izquierda, permite ir de un paso a otro */
+    .pasos {
+       width:min-content;
+       height: 100%; 
+       margin-right: 5%;
+       position: absolute;
+       top: 5%;
+       left: 12%;
+       cursor:pointer;
+    }
+
+    /* Los botones tienen distinto estilo en función de si muestran su contenido ("activo") o no ("inactivo). */
+    .activo, .inactivo, .activo span, .inactivo span {
+        font-family: var(--fuente-titulo);
+        font-weight: var(--peso-titulo-semibold);
+        font-size: var(--size-p);
+        padding: 4px 6px;
+        margin: 56px 16px 56px;
+        border-radius: 35% 50%;
+    }
+
+    .inactivo h2 {
+        color: #90B8DB;
+    }
+
+    .activo {
+        color: var(--color-secundario);
+    }
+
+    .activo span {
+        border: 3px solid #E5957D; 
+    }
+
+    .inactivo span {
+        border: 3px solid #90B8DB; 
+    }
+
+    /* Descripción de cada paso, sólo se muestra la del paso seleccionado. */
+    .slide {
+        width: 100%;
+        position: absolute;
+        top: 20%;
+        left: 38%;
+    }
+
+    .etapa {
+        width: 100%;
+        height: 20%;
+        display: none;
+    }
+    
+    .etapa ul{
+        width: 30%;
+        margin-right: 30px;
+        margin-top: 20px;
+        vertical-align: auto;
+        list-style-image: url("../img/how/icon-done.png");
+        font-size: var(--size-h4);
+        line-height: 1.5rem;
+    }
+
+    .etapa li {
+        margin-bottom: 24px;
+    }
+
+    .etapa#ux {
+        /* flex */
+        display: flex;
+    }
+
+    .imgDiscovery, .imgDiscovery2, .imgWebDesign, .imgDevelopment1, .imgDevelopment2, .imgTraining {
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+
+    .imgDiscovery {
+        width: 30%;
+        aspect-ratio: 4 / 3;
+        align-self: flex-start;
+        margin: 10px;
+        background-image: url(../img/how/discovery-drawing.png);
+    }
+
+
+    .imgDiscovery2 {
+        width: 130px;
+        height:130px;
+        margin: 4px auto;
+        background-image: url(../img/how/sitemap.png);
+    }
+
+    #design {
+        visibility: visible;
+    }
+
+    .imgWebDesign {
+        width: 30%;
+        aspect-ratio: 4 / 3;
+        align-self: flex-start;
+        margin: 10px;
+        background-image: url(../img/how/wireframes.png);
+    }
+
+    .development div {
+        width: 45%;
+        height: 100%;
+        padding-left: 50px;
+        /*flex*/
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .imgDevelopment1 {
+        width: 95px;
+        height: 121px;
+        margin: 30px 40px 80px; 
+        margin-bottom: 50px;
+        background-image: url(../img/how/die.png);
+    }
+
+    .imgDevelopment2 {
+        width: 273px;
+        height: 130px;
+        margin-top: 150px;
+        background-image: url(../img/how/responsive.png);
+    }
+
+    .imgTraining {
+        width: 25%;
+        aspect-ratio: 4 / 3;
+        margin: 10px;
+        background-image: url(../img/how/training.png);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Responsive */
+    /* Tablet (768px) */
+    @media (min-width: 768px) {
+
+        /* Parametros */
+        :root {
+            --size-h1: 2rem;
+            --size-h2: 1.81rem;
+            --size-h3: 1.63rem;
+            --size-h4: 1.43rem;
+        }
+
+        /* Normalizadores */
+
+        .h1Mobile {
+            padding: 2% 0%;
+        }
+        
+        
+        /* Reglas Generales */
+        /* Header */
+        header {
+            height: 80px;
+            padding: 32px;
+        }
+
+        .logo img {
+            width: 70px;
+        }
+
+        /* Menu mobile */
+        /* Boton mobile */
+        .btnMob{ 
+            padding: 20px;
+        }
+
+        /* Menu Principal */
+        .menuMob {
+            width: 21%;
+            top: 80px;
+        }
+
+        /* Opciones del Menu */
+        .menuMob a {
+            font-size: 1.3rem;
+        }
+
+        /* Overlay */
+        .overlay {
+            height: calc(100vh - 80px);
+            top: 80px;
+        }
+
+        /* Footer */
+        footer {
+            padding: 1% 2%;
+        }
+
+        footer span {
+            font-size: 1.25rem;
+        }
+
+        .rrss a {
+            font-size: 1.75rem; 
+        }
+    
+
+        /* Reglas Recursivas */
+        .navegacion {
+            display: flex !important;
+            }
+            
+        /* Reglas Especificas Homepage */
+        .mainPage > a{
+            padding: 0% 32%;
+        }
+    
+        .about, .work {
+            background-position: 60% ;
+        }
+    
+        .how, .contact {
+            background-position: 32% ;
+        }  
+
+        .about, .work, .contact {
+            background-size: 165px;
+        }
+
+        .how {
+            background-size: 230px;
+        }
+
+        /* Reglas Especificas About */
+        .tituloSeccion::after {
+            width: 30%;
+        }
+
+        .aboutPage {
+            /*flex*/
+            display: flex;
+        }
+
+        .articles {
+            width: 60%;
+            padding-right: 16px;
+        }
+
+        .mobileImage {
+            display: none;
+        }
+
+        .attachedImage {
+            display: block;
+        }
+    
+        .faq {
+            display: block;
+        }
+    
+        .faq h3, .faq p {
+            font-size: var(--size-p);
+        }
+
+        /* Reglas Especificas Pagina "how */
+
+    }
+
+
+
+    /* Desktop (1280px) */
+    @media (min-width: 1280px) {
+
+        /* Reglas Generales */
+        header {
+            height: 100px;
+        }
+
+        #headerHome {
+            display: none;
+        }
+
+        /* Logo */
+        .logo {
+            border-right: 3px solid var(--color-bordes);
+        }
+
+        .logo img {
+            padding: 4px;
+            width: 90px;
+        }
+
+        /* Menu Mobile */
+        /* Menu Principal */
+        .menuMob {
+            top: 100px;
+        }
+
+        /* Overlay General*/
+        .overlay {
+            height: calc(100vh - 100px);
+            top: 100px;
+        }
+
+        /* Homepage Desktop */
+        .h1Desktop{
+            display: block;
+        }
+        
+        .portada {
+            display: block;
+        }
+        
+        /* Footer */
+        #footerHome {
+            display: none;
+        }
+        
+        .rrss a {
+            font-size: 2.5rem; 
+        }
+
+        /* Reglas Recursivas */
+        .btnPrimario, .btnSecundario {
+            width: 200px;
+            margin-top: 16px;
+        }
+
+
+        /* Reglas Especificas */
+        /* Especificas Homepage Desktop */
+
+        .h1Mobile {
+            display: none;
+        }
+
+        .mainPage {
+            width: 100%;
+            height: calc(100vh - 100px);
+            /*Grid*/
+            display:grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+        }
+        
+        .mainPage > a{
+            width: 100%;
+            height: 100%;
+            background-size: 50%;
+            background-position: center;
+            font-size: 2rem;
+            color: transparent;
+            text-transform: capitalize;
+            /*flex*/
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Reglas Especificas About */
+
+        .tituloSeccion::after {
+            width: 22%;
+        }
+
+        .articles {
+            width: 70%;
+            padding-right: 24px;
+        }
+
+        .attachedImage {
+            background-size: 60vh;
+            background-position: 8% 70%;
+        }
+        
+        .articles p {
+            font-size: var(--size-p);
+        }
+        
+        .faq h3, .faq p {
+            font-size: var(--size-p);
+        }
+
+        /* Reglas Especificas Pagina "how" */
+
+    }
+
+    /* Full HD (1920px) */
+    @media (min-width: 1920px) {
+        /* Reglas Generales */
+        header {
+            height: 150px;
+        }
+
+        /* Logo */
+        .logo {
+            border-right: 3px solid var(--color-bordes);
+        }
+
+        .logo img {
+            padding: 16px;
+            width: 200px;
+        }
+
+        /* Menu Mobile */
+        /* Boton Menu Mobile */
+        .btnMob{ 
+            font-size: 3.5rem;
+            padding: 40px;
+        }
+
+        /* Menu Principal */
+        .menuMob {
+            top: 150px;
+        }
+
+        /* Overlay General*/
+        .overlay {
+            height: calc(100vh - 150px);
+            top: 150px;
+        }
+
+            
+        /* Homepage Desktop */
+        span.h1Desktop{
+            font-size: 3rem;
+        }
+            
+            
+        /* Footer */
+        footer span {
+            font-size: 2rem;
+        }
+            
+        .rrss a {
+            font-size: 2.75rem; 
+        }
+        
+        /* Reglas Recursivas */
+        .navegacion {
+            padding: 2% 8% 0%;
+        }    
+            
+        .navegacion a {
+            font-size: 1.2rem;
+        }
+            
+
+        /* Reglas Especificas */
+        /* Especificas Homepage */
+        .titulo {
+            top: 40vh;
+        }
+
+        .h1Mobile {
+            display: none;
+        }
+
+        .mainPage {
+            width: 100%;
+            height: calc(100vh - 150px);
+        }
+            
+        .mainPage > a{
+            font-size: 2.75rem;
+        }
+
+        /* Especificas About */
+        .tituloSeccion::after {
+            width: 16%;
+        }
+        
+        .articles {
+            width: 60%;
+            padding: 0px 100px;
+        }
+        
+        .attachedImage {
+            background-size: 50vh;
+        }
+            
+    }
